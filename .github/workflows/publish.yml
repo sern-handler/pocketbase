@@ -24,14 +24,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Get latest version
         run: |
-          curl -s https://api.github.com/repos/pocketbase/pocketbase/releases/latest \
+          echo "VERSION=$(curl -s https://api.github.com/repos/pocketbase/pocketbase/releases/latest \
             | grep "tag_name" \
             | awk '{print $2}' \
             | tr -d '"' \
             | tr -d ',' \
             | tr -d 'v' \
-            | tr -d ' ' \
-            >> $VERSION
+            | tr -d ' ')" >> $GITHUB_ENV
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
