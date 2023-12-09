@@ -3,6 +3,9 @@ name: Publish to Docker Hub
 on:
   schedule:
     - cron: "0 * * * *"
+  push:
+    branches:
+      - master
 
 jobs:
   docker:
