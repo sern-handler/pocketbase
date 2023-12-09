@@ -3,7 +3,9 @@
 FROM alpine:latest AS download
 
 ARG VERSION
-ADD https://github.com/pocketbase/pocketbase/releases/download/v${VERSION}/pocketbase_${VERSION}_linux_amd64.zip /pb.zip
+ARG BUILDARCH
+
+ADD https://github.com/pocketbase/pocketbase/releases/download/v${VERSION}/pocketbase_${VERSION}_linux_${BUILDARCH}.zip /pb.zip
 RUN unzip /pb.zip && chmod +x /pocketbase
 
 FROM alpine
