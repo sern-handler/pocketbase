@@ -39,6 +39,6 @@ jobs:
           push: true
           tags: |
             sernhandler/pocketbase:latest
-            sernhandler/pocketbase:$VERSION
+            sernhandler/pocketbase:${{ env.VERSION }}
           build-args: |
             VERSION=$VERSION
