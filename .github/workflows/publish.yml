@@ -41,4 +41,4 @@ jobs:
             sernhandler/pocketbase:latest
             sernhandler/pocketbase:${{ env.VERSION }}
           build-args: |
-            VERSION=$VERSION
+            VERSION=${{ env.VERSION }}
