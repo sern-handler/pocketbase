@@ -1,5 +1,3 @@
-# inspirado por los españolitos de muchobien/docker-pocketbase! gracias!
-
 FROM alpine:latest AS download
 
 ARG VERSION
